@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Snake</title>
+  <style>
+    .board {
+      border: 1px solid grey;
+      margin-bottom: 80px;
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .col {
+      height: 50px;
+      width: 50px;
+      border: 1px solid grey;
+      text-align: center;
+      font-size: 25px;
+      line-height: 50px;
+
+    }
+
+    .score-area {
+      height: 98px;
+      /* background-color: aquamarine; */
+      display: flex;
+      font-size: 58px;
+      font-family: cursive;
+    }
+
+    .score {
+      margin: auto;
+
+    }
+
+    .blur {
+      filter: blur(5px);
+    }
+
+    .score-label {
+      margin-left: 8px;
+    }
+
+    .snake {
+      background-color: red;
+    }
+
+    .game-over {
+      position: absolute;
+      width: 98%;
+      height: 100%;
+      top: 0px;
+      display: none;
+    }
+
+    .game-over span {
+      font-size: 200px;
+      font-style: oblique;
+      font-family: fantasy;
+      color: white;
+      text-shadow: -20px -4px 0px #b00000;
+    }
+
+    .game-over button {
+      background-color: #E91E63;
+      /* height: 52px; */
+      font-size: 52px;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <div class="screen">
+    <div class="score-area">
+      <div class="score"><span>🏆</span><span class="score-label">0</span></div>
+    </div>
+    <div class="board">
+    </div>
+    <div class="game-over">
+      <div style="margin:auto;display: flex;
+    flex-direction: column;"><span>Game Over</span>
+        <button id="reload-btn" onclick="location.reload()">RESTART</button></div>
+    </div>
+  </div>
+  <script>
+    var game = new ground();
+    game.initBoard();
+    game.initSnake();
+
+
+  </script>
+</body>
